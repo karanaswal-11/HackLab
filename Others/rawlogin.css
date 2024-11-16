@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    background-image: url('../assets/image/jai.jpg'); /* Ensure this path is correct */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+
+.login-container {
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Full height */
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.1); /* More transparent background */
+    padding: 20px; /* Padding to create space inside the box */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 0 px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Set a specific width for the login box */
+    height: 300px; /* Set a specific height for the login box */
+    display: flex; /* Flexbox for centering contents */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+    text-align: center; /* Center the text inside the login box */
+}
+
+.textbox {
+    margin-bottom: 20px; /* Add space between input fields */
+    width: 90%; /* Make input fields 80% of the container width */
+}
+
+.textbox input {
+    width: 100%; /* Make the input fields full width of the textbox */
+    padding: 10px; /* Adjust padding for larger input fields */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    font-size: 16px; /* Increase font size */
+}
+
+.btn {
+    padding: 10px 25px; /* Adjust button size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for button */
+    background-color: #4790df; /* Button color */
+    color: white; /* Button text color */
+    font-size: 16px; /* Increase button text size */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.btn:hover {
+    background-color: #63a1e4; /* Darker shade on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
