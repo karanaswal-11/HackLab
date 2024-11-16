@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackLab</title>
+    <link rel="stylesheet" href="../assets/css/setup.css"> <!-- Adjusted link -->
+    <style>
+        /* Nav styling - fixed below the header */
+        nav {
+            background-image: url('../assets/image/header2.jpg'); /* Add your nav background image here */
+            background-color: #333; /* Fallback color */
+            background-size: cover;
+            background-position: center;
+            padding: 20px 0;
+            position: fixed; /* Fix the nav bar */
+            top: 20px; /* Align it just below the header */
+            left: 0;
+            right: 0;
+            z-index: 999; /* Ensure it stays on top of the content */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+            display: flex; /* Use flex for horizontal layout */
+            justify-content: center; /* Center items */
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: hwb(187 42% 18%);
+            text-decoration: underline;
+        }
+
+        h2, h3 {
+            color: #333;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        h2:hover, h3:hover {
+            text-decoration: underline;
+        }
+
+        /* Style for database setup messages */
+        .setup-messages {
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
+
+        .setup-messages p {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+        }
+    </style>
+
+    <script>
+        function displaySetupMessages() {
+            // Simulate database setup by showing messages
+            document.getElementById('setup-messages').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1 style="font-size: 40px"> 𝐇𝐚𝐜𝐤𝐋𝐚𝐛  </h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="instructions.html">Instructions</a></li>
+        <li><a href="setup.html">Setup</a></li>
+        <li><a href="bruteforce.php">Brute Force</a></li>
+        <li><a href="commandexecution.php">Command Execution</a></li>
+        <li><a href="csrf.html">CSRF</a></li>
+        <li><a href="fileinclusion.html">File Inclusion</a></li>
+        <li><a href="sqlinjection.html">SQL Injection</a></li>
+        <li><a href="sqlinjection(blind).html">SQL Injection (Blind)</a></li>
+        <li><a href="upload.html">Upload</a></li>
+        <li><a href="xssreflected.html">XSS Reflected</a></li>
+        <li><a href="xssstored.html">XSS Stored</a></li>
+        <li><a href="security.php">HackLab security</a></li>
+        <li><a href="phpinfo.php">PHP Info</a></li>
+        
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Database setup &#x1F527;</h2>
+    <p>Click on the 'Create / Reset Database' button below to create or reset your database. If you get an error make sure you have the correct user credentials in <i>/config/config.inc.php</i></p>
+    <p>If the database already exists, it will be cleared and the data will be reset.</p>
+    <p><strong>Backend Database: MySQL</strong></p>
+
+    <!-- Button to trigger database setup -->
+    <button type="button" onclick="displaySetupMessages()">Create / Reset Database</button>
+
+    <!-- Div to display setup messages -->
+    <div id="setup-messages" class="setup-messages">
+        <p>Database has been created.</p>
+        <p>'users' table was created.</p>
+        <p>Data inserted into 'users' table.</p>
+        <p>'guestbook' table was created.</p>
+        <p>Data inserted into 'guestbook' table.</p>
+        <p>Setup successful!</p>
+    </div>
+</div>
+
+<footer style="font-size: 20px"> 🅷🅰🅲🅺🅻🅰🅱 </footer>
+
+</body>
+</html>

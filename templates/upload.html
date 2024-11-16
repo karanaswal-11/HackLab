@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackLab</title>
+    <link rel="stylesheet" href="../assets/css/upload.css"> <!-- Adjusted link -->
+    <style>
+        /* Nav styling - fixed below the header */
+        nav {
+            background-image: url('../assets/image/header2.jpg'); /* Add your nav background image here */
+            background-color: #333; /* Fallback color */
+            background-size: cover;
+            background-position: center;
+            padding: 20px 0;
+            position: fixed; /* Fix the nav bar */
+            top: 20px; /* Align it just below the header */
+            left: 0;
+            right: 0;
+            z-index: 999; /* Ensure it stays on top of the content */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+            display: flex; /* Use flex for horizontal layout */
+            justify-content: center; /* Center items */
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: hwb(187 42% 18%);
+            text-decoration: underline;
+        }
+
+        h2, h3 {
+            color: #333;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        h2:hover, h3:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="font-size: 40px">  𝐇𝐚𝐜𝐤𝐋𝐚𝐛  </h1>
+</header>
+
+<nav>
+    <ul>
+        <li>
+            <a href="dashboard.html">Home</a>
+        </li>
+        <li>
+            <a href="instructions.html">Instructions</a>
+        </li>
+        <li>
+            <a href="setup.html">Setup</a>
+        </li>
+        <li>
+            <a href="bruteforce.php">Brute Force</a>
+        </li>
+        <li>
+            <a href="commandexecution.php">Command Execution</a>
+        </li>
+        <li>
+            <a href="csrf.html">CSRF</a>
+        </li>
+        <li>
+            <a href="fileinclusion.html">File Inclusion</a>
+        </li>
+        <li>
+            <a href="sqlinjection.html">SQL Injection</a>
+        </li>
+        <li>
+            <a href="sqlinjection(blind).html">SQL Injection (Blind)</a>
+        </li>
+        <li>
+            <a href="upload.html">Upload</a>
+        </li>
+        <li>
+            <a href="xssreflected.html">XSS Reflected</a>
+        </li>
+        <li>
+            <a href="xssstored.html">XSS Stored</a>
+        </li>
+        <li>
+            <a href="security.php">HackLab security</a>
+        </li>
+        <li>
+            <a href="phpinfo.php">PHP Info</a>
+        </li>
+        
+    </ul>
+</nav>
+
+<div class="content">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflected Cross Site Scripting (XSS)</title>
+</head>
+<body>
+
+    <h1>Vulnerability: File Upload</h1>
+
+	<div class="vulnerable_code_area">
+
+		<form enctype="multipart/form-data" action="#" method="POST" />
+			<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+			Choose an image to upload:
+			<br />
+			<input name="uploaded" type="file" /><br />
+			<br />
+			<input type="submit" name="Upload" value="Upload" />
+		</form>
+
+		
+
+	</div>
+	
+	<h2>More info</h2>
+	<ul>
+		<li><a href="http://hiderefer.com/?http://www.owasp.org/index.php/Unrestricted_File_Upload" target="_blank">http://www.owasp.org/index.php/Unrestricted_File_Upload</a></li>
+		<li><a href="http://hiderefer.com/?http://blogs.securiteam.com/index.php/archives/1268" target="_blank">http://blogs.securiteam.com/index.php/archives/1268</a></li>
+		<li><a href="http://hiderefer.com/?http://www.acunetix.com/websitesecurity/upload-forms-threat.htm" target="_blank">http://www.acunetix.com/websitesecurity/upload-forms-threat.htm</a></li>
+	</ul>
+
+</div>
+
+
+				<br />
+				<br />
+				
+
+			</div>
+
+			<div class="clear">
+			</div>
+
+			<div id="system_info">
+				<input type="button" value="View Help" class="popup_button" onClick="javascript:popUp( '../../vulnerabilities/view_help.php?id=upload&security=high' )"> <input type="button" value="View Source" class="popup_button" onClick="javascript:popUp( '../../vulnerabilities/view_source.php?id=upload&security=high' )"> <div align="left"><b>Username:</b> admin<br /><b>Security Level:</b> high<br /><b>PHPIDS:</b> disabled</div>
+			</div>
+
+
+<footer style="font-size: 20px"> 🅷🅰🅲🅺🅻🅰🅱 </footer>
+
+</body>
+</html>
