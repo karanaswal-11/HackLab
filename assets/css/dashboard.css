@@ -1,0 +1,138 @@
+/* Basic styling for the page */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow: hidden; /* Prevent body scrolling */
+}
+
+/* Header styling */
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure the header stays above other content */
+    background-image: url('../image/header2.jpg'); /* Replace with your header background image */
+    background-size: cover; /* Cover the entire header */
+    background-position: center; /* Center the image */
+    height: 85px; /* Fixed height */
+}
+
+/* Navigation styling */
+nav {
+    background-image: url('../image/header.jpg'); /* Add your nav background image here */
+    background-color: #333; /* Fallback color */
+    background-size: cover; /* Ensure the background covers the nav */
+    background-position: center; /* Center the image */
+    padding: 20px 0;
+    margin-top: 100px; /* Push the nav right below the header */
+    position: fixed; /* Fix the nav under the header */
+    top: 100px; /* Ensures it's directly below the header */
+    left: 0;
+    right: 0;
+    z-index: 999; /* Make sure it's just below the header */
+}
+
+/* Nav items */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    display: flex; /* Use flex for horizontal layout */
+    justify-content: center; /* Center items */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative; /* Added to position tooltip */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    text-decoration: underline;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    z-index: 10;
+    white-space: nowrap; /* Prevent line breaks */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.2s; /* Fade effect */
+}
+
+/* Show the tooltip */
+.tooltip.show {
+    opacity: 1; /* Make it visible */
+}
+
+/* Content styling */
+.content {
+    margin-top: 100px; /* Push content below the nav bar */
+    max-width: 1900px; /* Set a max-width for the content */
+    background-color: white;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    padding: 10px; /* Inner padding for the content */
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(100vh - 300px); /* Adjust height so the content stretches */
+    box-sizing: border-box;
+}
+
+/* Heading styles */
+h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+h2:hover, h3:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Increased padding */
+    position: fixed; /* Fix the footer at the bottom */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000; /* Ensure the footer stays above other content */
+    background-image: url('../image/header.jpg'); /* Replace with your footer background image */
+    background-size: cover; /* Cover the entire footer */
+    background-position: center;
+    height: 50px; /* Fixed height */
+}
+.warning {
+    background-image: url('../image/warning.jpg');
+    background-size: cover;
+    background-position: center;
+    color: rgb(245, 244, 244);
+    border: 2.5px solid #eee6e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}

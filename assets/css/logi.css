@@ -1,0 +1,84 @@
+/* Ensures that the body and html occupy the full viewport */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif; /* Set a default font family */
+}
+
+/* Style for the video background to cover the entire screen */
+video {
+    position: fixed; /* Fix the video to the background */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cover the full width */
+    height: 100vh; /* Cover the full height */
+    object-fit: cover; /* Ensures the video covers the entire background */
+    z-index: -1; /* Places the video behind the login box */
+}
+
+/* Center the login box */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    position: relative; /* For proper z-index behavior */
+}
+
+/* Styling for the login box */
+.login-box {
+    background-color: rgba(76, 116, 204, 0.1); /* Semi-transparent background */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    width: 300px; /* Set a specific width for the login box */
+    height: auto; /* Adjust height dynamically */
+    display: flex; /* Flexbox for centering contents */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+    text-align: center; /* Center the text inside the login box */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+}
+
+/* Styling for the input fields */
+.textbox {
+    margin-bottom: 20px; /* Add space between input fields */
+    width: 100%; /* Make input fields 80% of the container width */
+}
+
+.textbox input {
+    width: 80%; /* Make the input fields full width of the textbox */
+    padding: 10px 20px; /* Adjust padding for larger input fields */
+    border: 1px  #ccc; /* Add a border */
+    border-radius: 10px; /* Rounded corners for inputs */
+    font-size: 14px; /* Increase font size */
+    
+}
+
+.btn {
+    padding: 10px 25px; /* Adjust button size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for button */
+    background-color: #4790df; /* Button color */
+    color: white; /* Button text color */
+    font-size: 16px; /* Increase button text size */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+.btn:hover {
+    background-color: #63a1e4; /* Darker shade on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+    
+    .btn {
+        width: 100%; /* Full-width button on mobile */
+    }
+}
