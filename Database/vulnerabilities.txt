@@ -1,0 +1,28 @@
+This table stores information about vulnerabilities to test on your platform.
+
+QUERY:
+
+CREATE TABLE vulnerabilities (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+#name: The name of the vulnerability (e.g., "SQL Injection", "XSS").
+#description: A brief description of the vulnerability.
+
+
+
+ **********Vulnerabilities Table Sample Data*************
+
+QUERY:
+
+INSERT INTO vulnerabilities (name, description, created_at) 
+VALUES 
+('SQL Injection', 'A type of attack where an attacker can execute arbitrary SQL code.', NOW()),
+('Cross-Site Scripting (XSS)', 'A vulnerability that allows injecting malicious scripts into web pages viewed by users.', NOW()),
+('Command Injection', 'Allows executing arbitrary system commands via a vulnerable web application.', NOW()),
+('File Inclusion', 'An attacker can include files on the server through a vulnerable application.', NOW());
+
+#vulnerabilities: WE can extend this list by adding more vulnerabilities as you build your platform.

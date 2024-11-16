@@ -1,0 +1,31 @@
+This table tracks user activities and actions on the platform (e.g., attempted attacks).
+
+QUERY:
+
+CREATE TABLE logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    activity VARCHAR(255) NOT NULL,
+    ip_address VARCHAR(45) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
+#user_id: References the user who performed the action.
+#activity: A description of the activity (e.g., "Attempted SQL Injection").
+#ip_address: The IP address of the user performing the action.
+
+**********Logs Table Sample Data***********
+
+QUERY:
+
+INSERT INTO logs (user_id, activity, ip_address, created_at) 
+VALUES 
+(1, 'Logged in successfully', '192.168.1.1', NOW()),
+(2, 'Attempted SQL Injection', '192.168.1.2', NOW()),
+(3, 'Tested Cross-Site Scripting (XSS)', '192.168.1.3', NOW()),
+(1, 'Changed security level to high', '192.168.1.1', NOW());
+
+#activity: A log message detailing the user action.
+#ip_address: The user's IP address performing the activity.

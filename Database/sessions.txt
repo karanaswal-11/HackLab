@@ -1,0 +1,33 @@
+To manage user sessions more securely, you can create a sessions table.
+
+QUERY:
+
+CREATE TABLE sessions (
+    session_id VARCHAR(128) PRIMARY KEY,
+    user_id INT NOT NULL,
+    ip_address VARCHAR(45) NOT NULL,
+    user_agent VARCHAR(255) NOT NULL,
+    last_activity TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+#session_id: A unique identifier for each session.
+#user_id: References the user associated with the session.
+#ip_address: The IP address of the user.
+#user_agent: The user-agent string from the browser for security tracking.
+
+
+***************Sessions Table (Optional) Sample Data*******************
+
+
+QUERY:
+
+
+INSERT INTO sessions (session_id, user_id, ip_address, user_agent, last_activity) 
+VALUES 
+('abc123', 1, '192.168.1.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36', NOW()),
+('def456', 2, '192.168.1.2', 'Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36', NOW());
+
+
+#session_id: Unique session identifier.
+#user_agent: A string that represents the user's browser or device.

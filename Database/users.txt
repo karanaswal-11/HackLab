@@ -1,0 +1,33 @@
+This table will store user information such as usernames and passwords.
+
+QUERY:
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('admin', 'user') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+#username: Unique username for each user.
+#password: Store hashed passwords.
+#role: Can be either admin or user.
+
+
+
+ 
+ 
+ *********Users Table Sample Data*******
+
+QUERY:
+
+INSERT INTO users (username, password, role, created_at) 
+VALUES 
+('admin', '$2y$10$eImiTXuWVxfM37uY4JANjQKbv1iQZHF1zYrG/A52yJtZyjLx4.zxO', 'admin', NOW()), -- password: "adminpass"
+('user1', '$2y$10$7b1gTcVZaiOT7o7xAaW94uPjUyCUz.L6h3UGc4d0ITNKhgtXfOpxC', 'user', NOW()), -- password: "user1pass"
+('user2', '$2y$10$yEJLQ3M7XzOILaDJUnHeTe34xlOhfA9K6BdX4Ma8mEmm6PUoHY27K', 'user', NOW()); -- password: "user2pass"
+
+
+#Note: The passwords are hashed using password_hash() in PHP. Replace these with your own hashed passwords as needed.

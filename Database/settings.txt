@@ -1,0 +1,26 @@
+This table stores the security level setting of the application (low, medium, high).
+
+QUERY:
+
+CREATE TABLE settings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    security_level ENUM('low', 'medium', 'high') DEFAULT 'low',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+#security_level: The security level (low, medium, high) for the platform.
+#created_at: Timestamp for when the settings were applied.
+
+
+*************Settings Table Sample Data***********
+
+QUERY:
+
+INSERT INTO settings (security_level, created_at) 
+VALUES 
+('low', NOW()),
+('medium', NOW()),
+('high', NOW());
+
+#security_level: Default levels are 'low', 'medium', and 'high'.
